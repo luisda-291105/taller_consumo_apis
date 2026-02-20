@@ -1,0 +1,240 @@
+/* ========================================
+   ESTILOS GENERALES
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+}
+
+
+/* ========================================
+   TARJETA PRINCIPAL
+======================================== */
+
+.clima-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ========================================
+   BARRA DE BÚSQUEDA
+======================================== */
+
+.search-container {
+    margin-bottom: 30px;
+}
+
+.search-input {
+    border: 2px solid #e0e0e0;
+    border-radius: 12px 0 0 12px;
+    padding: 12px 20px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #667eea;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-search {
+    background: #667eea;
+    border: 2px solid #667eea;
+    border-radius: 0 12px 12px 0;
+    color: white;
+    padding: 12px 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-search:hover {
+    background: #5568d3;
+    border-color: #5568d3;
+    transform: scale(1.05);
+}
+
+.btn-search i {
+    font-size: 18px;
+}
+
+
+/* ========================================
+   MENSAJE DE ERROR
+======================================== */
+
+.error-container {
+    background: #fee;
+    border: 1px solid #fcc;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error-icon {
+    font-size: 40px;
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+.error-text {
+    color: #c0392b;
+    font-size: 16px;
+    margin: 0;
+    font-weight: 500;
+}
+
+
+/* ========================================
+   INFORMACIÓN DEL CLIMA
+======================================== */
+
+.clima-info {
+    text-align: center;
+}
+
+
+/* ========== IMAGEN DEL CLIMA ========== */
+
+.clima-imagen-container {
+    margin-bottom: 10px;
+}
+
+.clima-imagen {
+    width: 150px;
+    height: 150px;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+}
+
+
+/* ========== TEMPERATURA ========== */
+
+.temperatura-container {
+    margin-bottom: 10px;
+}
+
+.temperatura {
+    font-size: 72px;
+    font-weight: 300;
+    color: #2c3e50;
+    margin: 0;
+}
+
+
+/* ========== CIUDAD ========== */
+
+.ciudad-container {
+    margin-bottom: 40px;
+}
+
+.ciudad-nombre {
+    font-size: 32px;
+    font-weight: 500;
+    color: #34495e;
+    margin: 0;
+}
+
+
+/* ========================================
+   DETALLES (HUMEDAD Y VIENTO)
+======================================== */
+
+.detalles-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding-top: 30px;
+    border-top: 1px solid #ecf0f1;
+}
+
+.detalle-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.detalle-icon {
+    font-size: 32px;
+    color: #667eea;
+}
+
+.detalle-info {
+    text-align: left;
+}
+
+.detalle-valor {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.detalle-label {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+/* ========================================
+   UTILIDADES
+======================================== */
+
+.d-none {
+    display: none !important;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 576px) {
+    .clima-card {
+        padding: 30px 20px;
+    }
+
+    .temperatura {
+        font-size: 56px;
+    }
+
+    .ciudad-nombre {
+        font-size: 24px;
+    }
+
+    .detalles-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .detalle-item {
+        justify-content: center;
+    }
+
+    .clima-imagen {
+        width: 120px;
+        height: 120px;
+    }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App del Clima</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="clima-card">
+            
+            <!-- ========== BARRA DE BÚSQUEDA ========== -->
+            <div class="search-container">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        class="form-control search-input" 
+                        placeholder="Buscar ciudad..." 
+                        id="ciudad-input"
+                    >
+                    <button class="btn btn-search" type="button" id="buscar-btn">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- ========== MENSAJE DE ERROR ========== -->
+            <!-- Este div se mostrará cuando haya un error -->
+            <div class="error-container d-none" id="error-mensaje">
+                <i class="bi bi-exclamation-circle error-icon"></i>
+                <p class="error-text">Ciudad no encontrada</p>
+            </div>
+
+
+            <!-- ========== INFORMACIÓN DEL CLIMA ========== -->
+            <!-- Este div contiene toda la información del clima -->
+            <div class="clima-info" id="clima-info">
+                
+                <!-- Imagen del clima -->
+                <div class="clima-imagen-container">
+                    <img 
+                        src="https://openweathermap.org/img/wn/01d@4x.png" 
+                        alt="Clima" 
+                        class="clima-imagen"
+                        id="clima-icono"
+                    >
+                </div>
+
+                <!-- Temperatura -->
+                <div class="temperatura-container">
+                    <h1 class="temperatura" id="temperatura">--°C</h1>
+                </div>
+
+                <!-- Ciudad -->
+                <div class="ciudad-container">
+                    <h2 class="ciudad-nombre" id="ciudad-nombre">Ciudad</h2>
+                </div>
+
+                <!-- Detalles adicionales (Humedad y Viento) -->
+                <div class="detalles-container">
+                    
+                    <!-- Humedad -->
+                    <div class="detalle-item">
+                        <i class="bi bi-droplet-fill detalle-icon"></i>
+                        <div class="detalle-info">
+                            <p class="detalle-valor" id="humedad">--%</p>
+                            <p class="detalle-label">Humedad</p>
+                        </div>
+                    </div>
+
+                    <!-- Viento -->
+                    <div class="detalle-item">
+                        <i class="bi bi-wind detalle-icon"></i>
+                        <div class="detalle-info">
+                            <p class="detalle-valor" id="viento">-- km/h</p>
+                            <p class="detalle-label">Viento</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- logic busines -->
+    <script src="script.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
