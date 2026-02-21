@@ -1,5 +1,5 @@
 /* ========================================
-   ESTILOS GENERALES
+    ESTILOS GENERALES
 ======================================== */
 
 * {
@@ -9,7 +9,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     display: flex;
@@ -23,21 +23,19 @@ body {
     width: 100%;
 }
 
-
 /* ========================================
-   TARJETA PRINCIPAL
+    TARJETA PRINCIPAL
 ======================================== */
 
 .clima-card {
-    background: white;
+    background: #fff;
     border-radius: 20px;
     padding: 40px 30px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-
 /* ========================================
-   BARRA DE BÚSQUEDA
+    BARRA DE BÚSQUEDA
 ======================================== */
 
 .search-container {
@@ -77,9 +75,8 @@ body {
     font-size: 18px;
 }
 
-
 /* ========================================
-   MENSAJE DE ERROR
+    MENSAJE DE ERROR
 ======================================== */
 
 .error-container {
@@ -104,15 +101,13 @@ body {
     font-weight: 500;
 }
 
-
 /* ========================================
-   INFORMACIÓN DEL CLIMA
+    INFORMACIÓN DEL CLIMA
 ======================================== */
 
 .clima-info {
     text-align: center;
 }
-
 
 /* ========== IMAGEN DEL CLIMA ========== */
 
@@ -125,7 +120,6 @@ body {
     height: 150px;
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
 }
-
 
 /* ========== TEMPERATURA ========== */
 
@@ -140,7 +134,6 @@ body {
     margin: 0;
 }
 
-
 /* ========== CIUDAD ========== */
 
 .ciudad-container {
@@ -154,9 +147,8 @@ body {
     margin: 0;
 }
 
-
 /* ========================================
-   DETALLES (HUMEDAD Y VIENTO)
+    DETALLES (HUMEDAD Y VIENTO)
 ======================================== */
 
 .detalles-container {
@@ -197,18 +189,16 @@ body {
     letter-spacing: 0.5px;
 }
 
-
 /* ========================================
-   UTILIDADES
+    UTILIDADES
 ======================================== */
 
 .d-none {
     display: none !important;
 }
 
-
 /* ========================================
-   RESPONSIVE
+    RESPONSIVE
 ======================================== */
 
 @media (max-width: 576px) {
