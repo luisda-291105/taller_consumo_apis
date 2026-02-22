@@ -147,6 +147,18 @@ body {
     margin: 0;
 }
 
+/* ========== ATMOSFERICO ========== */
+
+.atmospheric-container {
+    margin-bottom: 40px;
+}
+.tiempo-atmosferico {
+    font-size: 32px;
+    font-weight: 500;
+    color: #34495e;
+    margin: 0;
+}
+
 /* ========================================
     DETALLES (HUMEDAD Y VIENTO)
 ======================================== */

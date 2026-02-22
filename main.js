@@ -14,11 +14,14 @@ searchINPUT.addEventListener("keydown" , (even) => {
 async function initAPP() {
     // envio todos los datos del clima
     ObtenerClima(searchINPUT.value).then((clima) => {
-        document.querySelector("#temperatura").textContent = `${Math.round(clima.main.temp)} -°C`;
+        document.querySelector("#temperatura").textContent = `${Math.round(clima.main.temp)} °C`;
+        document.querySelector("#tiempo-atmosferico").textContent = clima.weather[0].main;
         document.querySelector("#ciudad-nombre").textContent = clima.name;
-        document.querySelector("#humedad").textContent = `${clima.main.humidity} -%`;
-        document.querySelector("#viento").textContent = `${clima.wind.speed} -km/h`;
+        document.querySelector("#humedad").textContent = `${clima.main.humidity} %`;
+        document.querySelector("#viento").textContent = `${clima.wind.speed} km/h`;
     })
+
+
     
 
     const data = await ObtenerClima(searchINPUT.value);
