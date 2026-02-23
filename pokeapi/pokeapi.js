@@ -23,7 +23,7 @@ function MostrarPokemon(poke) {
                 
             </div>
 
-            <p class="card-name">— ${poke.name} —</p>
+            <p class="card-name">${poke.name}</p>
 
             <div class="card-types">
                 ${tipos}
