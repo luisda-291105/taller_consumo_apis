@@ -11,8 +11,6 @@ for (let index = 1; index < 151; index++) {
 function MostrarPokemon(poke) {
 
     let tipos = poke.types.map((type) => `<span class="${type.type.name} type">${type.type.name}</span>`)
-    
-    console.log(tipos)
     tipos = tipos.join('')
 
     body.innerHTML += `
@@ -42,11 +40,11 @@ function MostrarPokemon(poke) {
                 </div>
                 <div class="stat">
                     <p class="stat-label">HP</p>
-                    <p class="stat-value">—</p>
+                    <p class="stat-value">${poke.stats[0].base_stat}</p>
                 </div>
                 <div class="stat">
                     <p class="stat-label">Exp. base</p>
-                    <p class="stat-value">—</p>
+                    <p class="stat-value">${poke.base_experience}</p>
                 </div>
             </div>
         </div>
