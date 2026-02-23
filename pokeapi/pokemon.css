@@ -1,0 +1,158 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0d0d0d;
+    color: #f0f0f0;
+    font-family: "Syne", sans-serif;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+
+/* ── GRID DE CARDS ── */
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+/* ── CARD ── */
+.card {
+    margin: 5px;
+    background: #111;
+    border: 1px solid #242424;
+    width: 280px;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1.75rem 1.75rem;
+    animation: fadeUp 0.5s ease both;
+}
+
+.card-id {
+    font-family: "DM Mono", monospace;
+    font-size: 0.65rem;
+    color: #444;
+    letter-spacing: 0.15em;
+    align-self: flex-start;
+    margin-bottom: 1rem;
+}
+
+.card-sprite {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.card-sprite-placeholder {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed #242424;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-sprite-placeholder span {
+    font-family: "DM Mono", monospace;
+    font-size: 0.6rem;
+    color: #333;
+    letter-spacing: 0.1em;
+}
+
+.card-sprite img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+.card-name {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.card-types {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.type {
+    font-family: "DM Mono", monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid #e8ff47;
+    color: #e8ff47;
+}
+
+.card-stats {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.stat {
+    border-top: 1px solid #1e1e1e;
+    padding-top: 0.6rem;
+}
+
+.stat-label {
+    font-family: "DM Mono", monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    color: #444;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 4 columnas desde 768px */
+@media (min-width: 768px) {
+    body {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 6 columnas desde 1200px */
+@media (min-width: 1200px) {
+    body {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
