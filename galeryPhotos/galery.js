@@ -9,7 +9,10 @@ function odtenerDatos() {
     fetch(url)
         .then((dato) => dato.json())
         .then((fotos) => {
+
             const primerasDiez = fotos.slice(0, 10);
+
+            FotosLocalStorage(primerasDiez);
             ContadorFotosLocalStorage(primerasDiez.length);
             primerasDiez.forEach((foto) => {
                 galeria.innerHTML += `
@@ -25,6 +28,13 @@ function odtenerDatos() {
         .catch((e) => {
             console.error(e);
         });
+}
+
+function FotosLocalStorage(foto) {
+    let fotosObtenidas = JSON.parse(localStorage.getItem("fotos")) || [];
+    fotosObtenidas.push(foto);
+
+    localStorage.setItem("fotos", JSON.stringify(fotosObtenidas));
 }
 
 function ContadorFotosLocalStorage(cantidad) {
@@ -45,18 +55,19 @@ function TotalCantidadFotos() {
 function Limpiar() {
     galeria.innerHTML = "";
     let cantidadFotos = JSON.parse(localStorage.getItem("cantidadFotos"));
+    let fotos = JSON.parse(localStorage.getItem("fotos"));
 
+    fotos = localStorage.clear();
     cantidadFotos = localStorage.clear();
 
-    fotosCount.innerHTML = "0"
+    fotosCount.innerHTML = "0";
 }
 
 btnCargarMas.addEventListener("click", () => {
     odtenerDatos();
-    setTimeout(() => {
-        let totalFotos = TotalCantidadFotos();
-        fotosCount.innerHTML = totalFotos;
-    }, 100);
+
+    let totalFotos = TotalCantidadFotos();
+    fotosCount.innerHTML = totalFotos;
 });
 
 btnLimpiar.addEventListener("click", () => {
