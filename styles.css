@@ -1,0 +1,411 @@
+/* ========================================
+   VARIABLES
+======================================== */
+
+:root {
+    --color-primary: #2c3e50;
+    --color-secondary: #3498db;
+    --color-accent: #e74c3c;
+    --color-text: #34495e;
+    --color-text-light: #7f8c8d;
+    --color-bg: #f8f9fa;
+    --color-card-bg: #ffffff;
+    --border-radius: 16px;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   RESET Y BASE
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.header-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   SECCIÓN DE PROYECTOS
+======================================== */
+
+.proyectos-section {
+    flex: 1;
+    padding: 80px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   GRID DE PROYECTOS
+======================================== */
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   CARDS DE PROYECTO
+======================================== */
+
+.proyecto-card {
+    background: var(--color-card-bg);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.proyecto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--color-secondary);
+    transform: scaleY(0);
+    transition: var(--transition);
+}
+
+.proyecto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.proyecto-card:hover::before {
+    transform: scaleY(1);
+}
+
+.proyecto-card:hover .card-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.proyecto-card:hover .card-icon {
+    transform: scale(1.1);
+}
+
+
+/* ========== ÍCONO DE LA CARD ========== */
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 36px;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+
+/* ========== CONTENIDO DE LA CARD ========== */
+
+.card-content {
+    flex: 1;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+
+/* ========== TAGS ========== */
+
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #f0f4f8;
+    color: var(--color-secondary);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+
+/* ========== FLECHA ========== */
+
+.card-arrow {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    font-size: 24px;
+    color: var(--color-secondary);
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: var(--transition);
+}
+
+
+/* ========================================
+   VARIACIONES DE COLOR POR CARD
+======================================== */
+
+.proyecto-card:nth-child(1) .card-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.proyecto-card:nth-child(2) .card-icon {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.proyecto-card:nth-child(3) .card-icon {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.proyecto-card:nth-child(1) .tag {
+    background: #e8eaf6;
+    color: #5e35b1;
+}
+
+.proyecto-card:nth-child(2) .tag {
+    background: #fce4ec;
+    color: #c2185b;
+}
+
+.proyecto-card:nth-child(3) .tag {
+    background: #e0f7fa;
+    color: #0097a7;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-text {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-text i {
+    font-size: 20px;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 992px) {
+    .header-title {
+        font-size: 2.5rem;
+    }
+
+    .header-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .proyectos-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 60px 0;
+    }
+
+    .header-icon {
+        font-size: 48px;
+    }
+
+    .header-title {
+        font-size: 2rem;
+    }
+
+    .header-subtitle {
+        font-size: 1rem;
+    }
+
+    .proyectos-section {
+        padding: 50px 0;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .proyectos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .proyecto-card {
+        padding: 30px;
+    }
+
+    .card-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-arrow {
+        bottom: 20px;
+        right: 20px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 40px 20px;
+    }
+
+    .header-title {
+        font-size: 1.75rem;
+    }
+
+    .proyectos-section {
+        padding: 40px 20px;
+    }
+
+    .proyecto-card {
+        padding: 25px;
+    }
+}
